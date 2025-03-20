@@ -4,16 +4,32 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class ProdutoSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
-     * @return void
      */
-    public function run()
-    {
-        //
+
+        public function run(): void
+        {
+            DB::table('produtos')->insert([
+                'nome' => 'sapato',
+                'quantidade' => 10,
+                'valor' => 100.10,
+            ]);
+
+            DB::table('produtos')->insert([
+                'nome' => 'Crocs',
+                'quantidade' => 30,
+                'valor' => 290.71,
+            ]);
+
+            DB::table('produtos')->insert([
+                'nome' => 'Tenis',
+                'quantidade' => 15,
+                'valor' => 150.25,
+            ]);
+        }
     }
-}
